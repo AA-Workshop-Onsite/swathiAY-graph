@@ -4,14 +4,17 @@ extend schema
       "@key",
       "@tag",
       "@shareable",
-      "@authenticated"
+      "@authenticated",
+      "@requiresScopes"
     ]
   )
 
-type Query { """
-  Get a specific order by id. Meant to be used for a detailed view of an
-order """
-order(id: ID!): Order @authenticated }
+type Query {
+  """
+  Get a specific order by id. Meant to be used for a detailed view of an order
+  """
+  order(id: ID!): Order @authenticated
+}
 
 """
 Returns information about a specific purchase
